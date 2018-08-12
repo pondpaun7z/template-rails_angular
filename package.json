@@ -9,9 +9,11 @@
     "@angular/platform-browser-dynamic": "^6.1.2",
     "@rails/webpacker": "3.5",
     "core-js": "^2.5.7",
+    "html-loader": "^0.5.5",
     "rxjs": "^6.2.2",
     "ts-loader": "3.5.0",
     "typescript": "^3.0.1",
+    "webpack-merge": "^4.1.4",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
