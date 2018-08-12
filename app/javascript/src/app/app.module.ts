@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module'
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { SecondaryComponent } from './components/secondary/secondary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    SecondaryComponent
   ],
   imports: [
     BrowserModule,
