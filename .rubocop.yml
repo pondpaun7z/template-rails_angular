@@ -1,0 +1,41 @@
+require: rubocop-performance
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'Rakefile'
+    - 'Guardfile'
+    - 'node_modules/**/*'
+    - 'config/**/*'
+  TargetRubyVersion: 2.5.3
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - 'spec/**/*'
+    - 'config/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/ColonMethodCall:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
