@@ -29,12 +29,18 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Rails Admin UI
+gem 'rails_admin', '~> 1.3.0'
+
 gem 'webpacker'
 
 gem 'foreman'
 
 # Environment variables
 gem 'figaro'
+
+# Draper adds an object-oriented layer of presentation logic to your Rails application.
+gem 'draper'
 
 # Ruby library that pretty prints Ruby objects in full color
 gem 'awesome_print', require: 'ap'
@@ -45,6 +51,16 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem 'bullet' # help to kill N+1 queries and unused eager loading
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'rspec-rails' # Rails testing engine
+  gem 'guard-rspec' # Auto-run specs
+  gem 'shoulda-matchers', '3.1.3' # Tests common Rails functionalities
+  gem 'selenium-webdriver' # Ruby bindings for Selenium/WebDriver
+  gem 'database_cleaner' # Use Database Cleaner
+  gem 'chromedriver-helper'
 end
 
 group :development do
@@ -57,6 +73,28 @@ group :development do
   gem 'binding_of_caller'
 
   gem 'rubocop-performance'
+
+  #== Mailer server
+  gem 'letter_opener_web', '~> 1.0'
+  gem "letter_opener"
+
+  #== Favicon
+  # gem 'rails_real_favicon'
+end
+
+group :test do
+  gem 'simplecov', require: false # code coverage analysis tool for Ruby
+  gem 'rspec-retry' # Retry randomly failing rspec example.
+  gem 'rails-controller-testing' # add helpers for template testing
+  gem 'factory_bot_rails'
+end
+
+group :production do
+  #== For Heroku
+  # gem 'rails_12factor'
+
+  #== Error tracking (https://sentry.io)
+  # gem "sentry-raven"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
