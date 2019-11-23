@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Rails Admin UI
 gem 'rails_admin', '~> 1.3.0'
+gem 'rails_admin_history_rollback'
 
 gem 'webpacker'
 
@@ -48,10 +49,15 @@ gem 'awesome_print', require: 'ap'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem "paranoia", "~> 2.2"
+
+gem 'paper_trail'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
+  gem 'webdrivers', '~> 4.0'
   gem 'bullet' # help to kill N+1 queries and unused eager loading
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
@@ -60,7 +66,11 @@ group :development, :test do
   gem 'shoulda-matchers', '3.1.3' # Tests common Rails functionalities
   gem 'selenium-webdriver' # Ruby bindings for Selenium/WebDriver
   gem 'database_cleaner' # Use Database Cleaner
-  gem 'chromedriver-helper'
+
+  gem 'pronto'
+  gem 'pronto-rubocop', require: false
+  gem 'pronto-flay', require: false # analyzes code for structural similarities
+  gem 'pronto-brakeman', require: false # analyzes code for security vulnerabilities
 end
 
 group :development do

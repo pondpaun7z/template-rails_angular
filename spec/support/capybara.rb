@@ -1,9 +1,13 @@
-require 'selenium-webdriver'
 require 'capybara'
 require 'capybara/rspec'
+require 'webdrivers'
 
 # Give CI some extra time
 CAPYBARA_TIMEOUT = ENV['TEST_CI_SERVER'] ? 10 : 5
+
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
 
 # https://github.com/rails/rails/pull/30876
 Capybara.register_driver(:headless_chrome) do |app|
@@ -41,6 +45,8 @@ Capybara.register_driver(:headless_chrome) do |app|
 end
 
 Capybara.javascript_driver = :headless_chrome
+Capybara.run_server = true
+Capybara.server = :puma
 Capybara.default_max_wait_time = CAPYBARA_TIMEOUT
 
 RSpec.configure do |config|
