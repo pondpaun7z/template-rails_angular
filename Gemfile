@@ -88,6 +88,10 @@ group :development do
   gem 'letter_opener_web', '~> 1.0'
   gem "letter_opener"
 
+  # Easy to rename app
+  # $ rails g rename:into New-Name
+  gem 'rename'
+
   #== Favicon
   # gem 'rails_real_favicon'
 end
