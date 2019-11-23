@@ -5,12 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: angular-webpacker-app_development
+  database: github_action
 
 test:
   <<: *default
-  database: angular-webpacker-app_test
-
+  database: github_action
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
