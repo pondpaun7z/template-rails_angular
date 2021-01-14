@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Rails Admin UI
-gem 'rails_admin', '~> 1.3.0'
+gem 'rails_admin', '~> 1.4.3'
 gem 'rails_admin_history_rollback'
 
 gem 'webpacker'
